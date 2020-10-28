@@ -1,0 +1,62 @@
+.body
+{
+  background-color:	#2a9df438;
+}
+
+.panel 
+{
+  background-color: white;
+  border-radius: 5px;
+  width: 95%;
+  display: flex;
+  margin: 20px auto;
+}
+
+.panel-body
+{
+  width: 95%;
+  margin: 20px auto;
+}
+
+.btn-form 
+{
+  width: 100%;
+}
+
+/* Margins */
+
+.margin-bottom-md 
+{
+  margin-bottom: 10px !important;
+}
+
+.margin-bottom-lg
+{
+  margin-bottom: 20px !important;
+}
+
+/* Buttons */
+
+#btn-create-id-card
+{
+  background-color: #1167b1;
+  border-color: #1167b1;
+}
+
+#btn-create-id-card:hover
+{
+  background-color: #03254c;
+  border-color: #03254c;
+}
+
+#btn-clear-form
+{
+  background-color: #adb5bd;
+  border-color: #adb5bd;
+}
+
+#btn-clear-form:hover 
+{
+  background-color: #6c757d;
+  border-color: #6c757d;
+}

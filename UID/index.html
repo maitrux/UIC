@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ID card</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="idCardScripts.js"></script>
+  <link rel="stylesheet" href="idCardStyles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="body">
+  <div class="panel">
+    <div class="panel-body">
+      <h1>Create your digital ID card</h1>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-body">
+      <form>
+        <div class="form-row margin-bottom-md">
+          <div class="col">
+            <label for="email">First name:</label>
+            <input type="email" class="form-control" id="firstName">
+          </div>
+        </div>
+        <div class="form-row margin-bottom-md">
+          <div class="col">
+            <label for="email">Last name:</label>
+            <input type="email" class="form-control" id="lastName">
+          </div>
+        </div>
+        <div class="form-row margin-bottom-md">
+          <div class="col">
+            <label for="birthDate">Birth date:</label>
+            <input type="date" class="form-control" id="birthDate">
+          </div>
+          <div class="col">
+            <label for="gender">Gender:</label>
+            <select class="form-control form-control-md">
+              <option hidden></option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row margin-bottom-md">
+          <div class="col">
+            <label for="gender">Nationality:</label>
+            <select class="form-control form-control-md" id="nationalitySelect">
+              <option hidden></option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="gender">Personal ID number:</label>
+            <input type="email" class="form-control" id="idNumber">
+          </div>
+        </div>
+        <div class="form-row margin-bottom-lg">
+          <div class="col">
+            <label for="picture">Picture:</label>
+            <input type="file" class="form-control-file" id="picture">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <button type="button" id="btn-clear-form" class="btn btn-form btn-secondary">Clear</button>
+          </div>
+          <div class="col">
+            <a href="idCard.html"><button type="button" id="btn-create-id-card" class="btn btn-form btn-primary">Create ID card</button></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+
