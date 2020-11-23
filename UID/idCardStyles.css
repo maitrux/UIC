@@ -37,26 +37,48 @@
 
 /* Buttons */
 
-#btn-create-id-card
+.btn-primary
 {
-  background-color: #1167b1;
-  border-color: #1167b1;
+  background-color: #1167b1 !important;
+  border-color: #1167b1 !important;
 }
 
-#btn-create-id-card:hover
+.btn-primary:hover
 {
-  background-color: #03254c;
-  border-color: #03254c;
+  background-color: #03254c !important;
+  border-color: #03254c !important;
 }
 
-#btn-clear-form
+.btn-secondary
 {
-  background-color: #adb5bd;
-  border-color: #adb5bd;
+  background-color: #adb5bd !important;
+  border-color: #adb5bd !important;
+  color: white !important;
 }
 
-#btn-clear-form:hover 
+.btn-secondary:hover 
 {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  color: white !important;
+  outline: none !important;
+}
+
+.btn-secondary:focus,
+.btn-primary:focus,
+.close,
+#picture
+{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.is-invalid
+{
+  background-image: none !important;
+}
+
+.no-border
+{
+  border: none !important;
 }
