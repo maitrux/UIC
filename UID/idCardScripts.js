@@ -1,3 +1,4 @@
+// Ann-Sofi's part
 var nationalities = ["Afghan", "Albanian", "Algerian", "American", "Andorran", 
                      "Angolan",	"Anguillan",	"Citizen of Antigua and Barbuda",
                      "Argentine",	"Armenian",	"Australian",	"Austrian",
@@ -9,12 +10,15 @@ var nonEmptyInputs = ["lastName", "birthDate", "idNumber", "picture"];
 
 var nonEmptySelects = ["gender", "nationality"];
 
+var userInformation = {firstName: "", lastName: "", birthDate: "", gender: "", nationality: "", idNumber: "", picture: ""};
+
 $(document).ready(function() {
   initialize();
   validateUserInputs();
   resetForm();
+  showIdCard();
+  createANewIDCard();
 
-  
   $('.input').on('input', function()
   {
     if($(this).val().length != 0)
@@ -29,7 +33,6 @@ $(document).ready(function() {
     }
   });
 });
-
 
 
 function initialize() {
@@ -53,16 +56,22 @@ function validateUserInputs()
 
     if (!$(".is-invalid")[0])
     {
-      $("#firstNameConfirmation").text($("#firstName").val());
-      $("#lastNameConfirmation").text($("#lastName").val());
-      $("#birthDateConfirmation").text($("#birthDate").val());
-      $("#genderConfirmation").text($("#gender option:selected").val());
-      $("#nationalityConfirmation").text($("#nationality option:selected").val());
-      $("#idNumberConfirmation").text($("#idNumber").val());
+      userInformation.firstName = $("#firstName").val();
+      userInformation.lastName = $("#lastName").val();
+      userInformation.birthDate = $("#birthDate").val();
+      userInformation.gender = $("#gender option:selected").val();
+      userInformation.nationality = $("#nationality option:selected").val();
+      userInformation.idNumber = $("#idNumber").val();
+      userInformation.picture = 
+
+      $(".firstNameShown").text(userInformation.firstName);
+      $(".lastNameShown").text(userInformation.lastName);
+      $(".birthDateShown").text(userInformation.birthDate);
+      $(".genderShown").text(userInformation.gender);
+      $(".nationalityShown").text(userInformation.nationality);
+      $(".idNumberShown").text(userInformation.idNumber);
 
       $('#createIdCardModal').modal('show');
-     
-
     }
   });
 }
@@ -101,4 +110,19 @@ function resetForm()
     $("#idCard-form").trigger("reset");
     $('#clearFormModal').modal('toggle');
   });
+}
+
+// Eira's part
+function showIdCard()
+{
+  $("#create-id-card-confirmation-btn").click(function() {
+    $("#createIdCardModal").modal('hide');
+    $("#idCardForm").hide();
+    $("#idCard").show();
+  });
+}
+
+function createANewIDCard() 
+{
+  console.log("HIP HEI);
 }
