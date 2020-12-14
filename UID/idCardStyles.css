@@ -35,6 +35,16 @@
   margin-bottom: 20px !important;
 }
 
+.margin-top-xs 
+{
+  margin-top: 5px !important;
+}
+
+.margin-top-lg
+{
+  margin-top: 20px !important;
+}
+
 /* Buttons */
 
 .btn-primary
@@ -83,7 +93,10 @@
   border: none !important;
 }
 
-.margin-top-md 
+/* By ID */
+
+#pictureShown 
 {
-  margin-top: 5px !important;
+  max-width:100%;
+  height:auto;
 }

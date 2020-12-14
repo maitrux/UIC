@@ -6,18 +6,19 @@ var nationalities = ["Afghan", "Albanian", "Algerian", "American", "Andorran",
                      "Barbadian", "Belgian", "Belizean", "Beninese",
                      "Bermudian"];
 
-var nonEmptyInputs = ["lastName", "birthDate", "idNumber", "picture"];
+var nonEmptyInputs = ["lastName", "birthDate", "idNumber", "pictureInput"];
 
 var nonEmptySelects = ["gender", "nationality"];
 
 var userInformation = {firstName: "", lastName: "", birthDate: "", gender: "", nationality: "", idNumber: "", picture: ""};
 
-$(document).ready(function() {
+$(document).ready(function() 
+{
   initialize();
   validateUserInputs();
   resetForm();
   showIdCard();
-  createANewIDCard();
+  confirmNewIdCard(); 
 
   $('.input').on('input', function()
   {
@@ -27,7 +28,8 @@ $(document).ready(function() {
     }
   });
 
-  $(".select").on('change', function() {
+  $(".select").on('change', function() 
+  {
     if ($(this).val().length != 0){
       $(this).removeClass("is-invalid");
     }
@@ -35,11 +37,13 @@ $(document).ready(function() {
 });
 
 
-function initialize() {
+function initialize() 
+{
   createNationalityOptions();
 }
 
-function createNationalityOptions() {
+function createNationalityOptions() 
+{
   for(var nationality of nationalities) 
   {
     $('#nationality').append($('<option>', {
@@ -50,8 +54,8 @@ function createNationalityOptions() {
 
 function validateUserInputs()
 {
-  $("#btn-create-id-card").click(function(){
-
+  $("#btn-create-id-card").click(function()
+  {
     checkEmptyInputs();
 
     if (!$(".is-invalid")[0])
@@ -62,7 +66,6 @@ function validateUserInputs()
       userInformation.gender = $("#gender option:selected").val();
       userInformation.nationality = $("#nationality option:selected").val();
       userInformation.idNumber = $("#idNumber").val();
-      userInformation.picture = 
 
       $(".firstNameShown").text(userInformation.firstName);
       $(".lastNameShown").text(userInformation.lastName);
@@ -72,6 +75,7 @@ function validateUserInputs()
       $(".idNumberShown").text(userInformation.idNumber);
 
       $('#createIdCardModal').modal('show');
+
     }
   });
 }
@@ -105,24 +109,45 @@ function checkEmptyInputs()
 
 function resetForm()
 {
-  $("#clear-form-confimed").click(function(){
+  $("#clear-form-confimed").click(function()
+  {
     $('.is-invalid').removeClass('is-invalid');
     $("#idCard-form").trigger("reset");
     $('#clearFormModal').modal('toggle');
   });
 }
 
-// Eira's part
-function showIdCard()
+function confirmNewIdCard() 
 {
-  $("#create-id-card-confirmation-btn").click(function() {
-    $("#createIdCardModal").modal('hide');
-    $("#idCardForm").hide();
-    $("#idCard").show();
+  $("#create-new-id-card").click(function() 
+  {
+    $("#createNewIdCardModal").modal("show");
+  });
+
+  $("#create-new-id-card-confirmation-btn").click(function() 
+  {
+    createNewIDCard();
+    $('#createNewIdCardModal').modal('toggle');
   });
 }
 
-function createANewIDCard() 
+// Eira's part
+function showIdCard()
 {
-  console.log("HIP HEI);
+  $("#create-id-card-confirmation-btn").click(function() 
+  {
+    $("#createIdCardModal").modal('hide');
+    $("#idCardForm").hide();
+    $("#idCard").show();
+    console.log("Create id card confirmation button has been clicked and the new card has been created!");
+  });
+}
+
+function createNewIDCard() 
+{
+  console.log("Create a new ID card.");
+  $('.is-invalid').removeClass('is-invalid');
+  $("#idCard-form").trigger("reset");
+  $("#idCardForm").show();
+  $("#idCard").hide();
 }
